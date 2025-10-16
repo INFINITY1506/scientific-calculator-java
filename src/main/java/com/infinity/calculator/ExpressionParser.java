@@ -180,8 +180,16 @@ public class ExpressionParser {
         try { new BigDecimal(t); return true; } catch (Exception e) { return false; }
     }
 
-    private boolean isOperator(String t) { return Map.of("+",1,"-",1,"*",1,"×",1,"/",1,"÷",1,"%",1,"^",1).containsKey(t); }
-    private boolean isFunction(String t) { return Map.of("sin",1,"cos",1,"tan",1,"asin",1,"acos",1,"atan",1,"ln",1,"log",1,"sqrt",1,"inv",1,"fact",1).containsKey(t); }
+    private boolean isOperator(String t) { 
+        return t.equals("+") || t.equals("-") || t.equals("*") || t.equals("×") || 
+               t.equals("/") || t.equals("÷") || t.equals("%") || t.equals("^"); 
+    }
+    private boolean isFunction(String t) { 
+        return t.equals("sin") || t.equals("cos") || t.equals("tan") || 
+               t.equals("asin") || t.equals("acos") || t.equals("atan") || 
+               t.equals("ln") || t.equals("log") || t.equals("sqrt") || 
+               t.equals("inv") || t.equals("fact"); 
+    }
 }
 
 
