@@ -1,0 +1,31 @@
+:root { --bg:#0f172a; --fg:#e2e8f0; --accent:#38bdf8; --muted:#94a3b8; --btn:#1e293b; --btn-hover:#334155; --danger:#ef4444; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial; background: var(--bg); color: var(--fg); }
+.app { max-width: 420px; margin: 0 auto; padding: 16px; }
+.header { display:flex; align-items:center; justify-content:space-between; }
+.header h1 { font-size: 20px; margin: 8px 0; }
+#contrastToggle { background: var(--btn); color: var(--fg); border:none; border-radius:8px; padding:8px 10px; }
+.calculator { display:flex; flex-direction:column; gap:12px; }
+.display { background:#111827; padding:16px; border-radius:12px; min-height: 96px; display:flex; flex-direction:column; justify-content:center; }
+.expression { color: var(--muted); font-size:14px; min-height:20px; word-break:break-all; }
+.result { font-size:28px; word-break:break-all; }
+.controls { display:flex; flex-direction:column; gap:8px; }
+.row { display:grid; grid-template-columns: repeat(5, 1fr); gap:8px; }
+.row:nth-child(6), .row:nth-child(7), .row:nth-child(8) { grid-template-columns: repeat(5, 1fr); }
+button { padding:14px; font-size:16px; background:var(--btn); color:var(--fg); border:none; border-radius:10px; cursor:pointer; outline:2px solid transparent; outline-offset:2px; }
+button:hover { background: var(--btn-hover); }
+button:active { transform: translateY(1px); }
+button[aria-label="Equals"], #equals { background: var(--accent); color:#0b1220; }
+button.zero { grid-column: span 2; }
+.footer { position: sticky; bottom:0; background:#0b1220; margin-top:12px; padding:10px 12px; display:flex; justify-content:space-between; border-radius:10px; }
+@media print {
+  body { background:#fff; color:#000; }
+  .controls, .header, .footer { display:none; }
+  .display { border:none; box-shadow:none; }
+  .result { font-size:48px; text-align:center; margin-top:120px; }
+  .expression { text-align:center; font-size:20px; }
+}
+.high-contrast { --bg:#000; --fg:#fff; --btn:#000; --btn-hover:#111; --accent:#0ff; --muted:#ccc; }
+:focus-visible { outline: 3px solid var(--accent); }
+
+

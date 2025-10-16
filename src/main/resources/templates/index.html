@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scientific Calculator</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="/styles.css">
+<meta name="theme-color" content="#0f172a">
+</head>
+<body>
+<div class="app" role="application">
+  <header class="header">
+    <h1>Scientific Calculator</h1>
+    <button id="contrastToggle" aria-label="Toggle high contrast" title="High Contrast">HC</button>
+  </header>
+  <main class="calculator">
+    <div class="display" aria-live="polite">
+      <div id="expression" class="expression"></div>
+      <div id="result" class="result">0</div>
+    </div>
+    <div class="controls">
+      <div class="row">
+        <button data-action="MC" aria-label="Memory clear">MC</button>
+        <button data-action="MR" aria-label="Memory recall">MR</button>
+        <button data-action="M+" aria-label="Memory add">M+</button>
+        <button data-action="M-" aria-label="Memory subtract">M-</button>
+        <button id="angleToggle" aria-label="Toggle angle mode">DEG</button>
+      </div>
+      <div class="row">
+        <button data-fn="sin">sin</button>
+        <button data-fn="cos">cos</button>
+        <button data-fn="tan">tan</button>
+        <button data-fn="asin">asin</button>
+        <button data-fn="acos">acos</button>
+        <button data-fn="atan">atan</button>
+      </div>
+      <div class="row">
+        <button data-fn="ln">ln</button>
+        <button data-fn="log">log10</button>
+        <button data-fn="sqrt">√</button>
+        <button data-fn="square">x²</button>
+        <button data-fn="pow">xʸ</button>
+        <button data-fn="inv">1/x</button>
+      </div>
+      <div class="row">
+        <button data-val="(">(</button>
+        <button data-val=")">)</button>
+        <button data-val="π">π</button>
+        <button data-val="e">e</button>
+        <button data-action="AC">AC</button>
+        <button data-action="C">C</button>
+      </div>
+      <div class="row">
+        <button data-val="7">7</button>
+        <button data-val="8">8</button>
+        <button data-val="9">9</button>
+        <button data-op="÷">÷</button>
+        <button data-op="%">%</button>
+      </div>
+      <div class="row">
+        <button data-val="4">4</button>
+        <button data-val="5">5</button>
+        <button data-val="6">6</button>
+        <button data-op="×">×</button>
+        <button data-op="-">−</button>
+      </div>
+      <div class="row">
+        <button data-val="1">1</button>
+        <button data-val="2">2</button>
+        <button data-val="3">3</button>
+        <button data-op="+">+</button>
+        <button data-action="pm">±</button>
+      </div>
+      <div class="row">
+        <button data-val="0" class="zero">0</button>
+        <button data-val=".">.</button>
+        <button data-fn="fact">n!</button>
+        <button id="equals" aria-label="Equals">=</button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div>Angle: <span id="angleIndicator">DEG</span></div>
+    <div>Memory: <span id="memoryIndicator">0</span></div>
+  </footer>
+</div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
+
+
